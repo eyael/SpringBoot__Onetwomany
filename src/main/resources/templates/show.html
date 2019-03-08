@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Show</title>
+</head>
+<body>
+
+<a href="/">Show All Childrens</a><br/>
+Name :<span th:text="${children.mom.name}" ></span><br />
+Gender : <span th:text="${children.name}"></span><br/>
+grade : <span th:text="${children.grade}"></span><br/>
+age :   <span th:text="${children.age}"></span><br/>
+<a th:href="@{/delete/{id}(id=${children.id})}">Delete this kids</a>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>List</title>
+</head>
+<body>
+<a href="/addmom">Add a Children</a><br/>
+<a href="/add">Add a Children</a><br/>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Greade</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="children : ${childrens}">
+        <td th:text="${children.name}"></td>
+        <td th:text="${children.grade}"></td>
+        <td th:text="${children.gender}"></td>
+        <td th:text="${children.age}"></td>
+
+
+
+        <td>
+            <a th:href="@{/update/{id}(id=${children.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${children.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${children.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
